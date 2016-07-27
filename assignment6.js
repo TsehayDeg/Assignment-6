@@ -1,6 +1,8 @@
 // JavaScript
+
+// --------- part 1 b -------
     
-/* otheropt.addEventListener("click", function () {
+ otheropt.addEventListener("click", function () {
      var hide = document.getElementById("othert");
     var selection = document.getElementById("otheropt").value;
     if (selection == "other") {
@@ -11,10 +13,11 @@
 
         } 
         
-});*/
+});
 
+// --------- part 1 c -------
  
-/*finished.addEventListener("click", function validate(){    
+finished.addEventListener("click", function validate(){    
     var re = /^[A-Za-z]+$/;
     var zc = /^[0-9]{5}(?:-[0-9]{4})?$/;
     var phn = /^\d{10}$/;
@@ -33,26 +36,136 @@
        {}
     else
        {alert('Invalid Email Address')};
-})*/
+})
 
+// --------- part 2 step 2 -------
 HT.addEventListener("click", function () {
     
-      if ( (document.forms[2].infra[0].checked == true ) // (document.forms[0].radio1[1].checked == true ) )  
+      if (HT.checked == true )   
     {  
-    alert ( "You have selected one option" );  
-    }  
-     
-    /* var pizzaSize = document.getElementById("cps");
-    var selection = document.getElementById("dough").value;
-    if (selection == "HT") {
-        pizzaSize.style.display = "block";
+    cps1.style.display = "block";
         
-        } else {
-            pizzaSize.style.display = "none";
+    } else {
+    cps1.style.display = "none";
 
-        } */
+        } 
         
 });
+
+TC.addEventListener("click", function () {
+    
+      if (TC.checked == true )   
+    {  
+    cps2.style.display = "block";
+        
+    }   else {
+    cps2.style.display = "none";
+
+        } 
+        
+});
+
+NY.addEventListener("click", function () {
+    
+      if (NY.checked == true )   
+    {  
+    cps3.style.display = "block";
+        
+    }   else {
+    cps3.style.display = "none";
+
+        } 
+        
+});
+
+GF.addEventListener("click", function () {
+    
+      if (GF.checked == true )   
+    {  
+    cps4.style.display = "block";
+        
+    }   else {
+    cps4.style.display = "none";
+
+        } 
+        
+});
+
+// --------- General Things to Consider 1 -------
+cheese.addEventListener("click", function validate() {
+var a = 0, btn=document.getElementsByName("infra")
+for(i=0;i<btn.length;i++) {
+if(btn.item(i).checked == false) {
+a++;
+}
+}
+if(a == btn.length) {
+alert("Choose the type of dough you need");
+document.getElementById("dough").style.border = "2px solid red";
+return false;
+} else {
+document.getElementById("dough").style.border = "";
+}
+});
+
+cheese.addEventListener("click", function validatea() {
+var combo1 = document.getElementsByName("Size")
+if(combo1.value == null || combo1.value == "") {
+alert("Please Choose Pizza size");
+document.getElementById("sizenprice").style.border = "2px solid red";
+return false;
+} else {
+document.getElementById("sizenprice").style.border = "";
+}
+})
+
+// --------- General Things to Consider 3 -------
+
+done.addEventListener("click", function () {
+    
+   var doneMake = confirm("Are you sure you are done building your pizza?");
+    if (doneMake) {
+        alert("Go to the billing section! :)");
+    } else {
+        return false;
+    }
+        
+    
+})
+
+// ---------------General things to consider 2 ------
+var grandTotal = 0.00; 
+//function what () {
+    grandTotal = 0.00;
+var toppingResult = 0.99 * toppingTotal;
+grandTotal += toppingResult;
+    
+
+function toppingTotal () {
+var topping = document.getElementsByName("top");
+var toppingNumber = 0;
+for (i=0; i < topping.length; i++)
+    {
+    if (topping[i].type === "checkbox" && topping[i].checked === true) {
+        toppingNumber++;
+        
+    }
+    }
+    return toppingNumber;
+   
+    }
+
+document.getElementById("totalCost").innerHTML = grandTotal.toFixed(2);
+
+/* finished1.addEventListener("click", function () {
+    alert("you choose " + toppingNumber);
+})*/
+
+
+
+/*if ((document.getElementById("dough").checked == false) &&     
+    (document.getElementById("sizenprice").checked == false))*/
+
 /*window.addEventListener("load", function{
                         
         button1.addEventListener("click",myFunction, false);

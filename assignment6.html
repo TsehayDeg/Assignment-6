@@ -102,12 +102,14 @@
                 <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Hint: Please use the format youremail@example.com">
                 </div>
             </div>
+            
+            
         <div class="form-group">
-       <label class="control-label"> Choose the type of dough you need: </label>
+       <label class="control-label"> Choose the type of dough you need </label>
             </div>
             <div id="dough" class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-        <input id="HT" type="radio" name="infra1" value="HT">Hand Tossed<br>
+        <input id="HT" type="radio" name="infra" value="HT">Hand Tossed<br>
                 
         <input id="TC" type="radio" name="infra" value="TC">Thin Crust<br>
                 
@@ -116,42 +118,58 @@
         <input id="GF" type="radio" name="infra" value="GF">Gluten Free<br>
             </div>
             </div>
+             <div id="sizenprice">   
             
-            <div id="cps" style="display:none"class="form-group">
+            <div id="cps1" style="display:none" class="form-group">
        <label class="control-label col-sm-3"> Choose Pizza size </label>
             
             <div id="ht" class="col-sm-9">
             <select class="form-control" name="Size" >
-    
-        <option value="small" selected >Small ($9.99)</option>
+        <option value="" >Choose a size</option>
+        <option value="small">Small ($9.99)</option>
         <option value="medium" > Medium ($12.99) </option>
         <option value="large" >Large ($14.99) </option>
                 </select>
                 </div>
             </div>
-            <div id="tc" style="display:none" class="col-sm-9">
+            <div id="cps2"  style="display:none" class="form-group">
+       <label class="control-label col-sm-3"> Choose Pizza size </label>
+                
+            <div id="tc" class="col-sm-9">
             <select class="form-control" name="Size" >
+        <option value="" >Choose a size</option>
         <option value="medium" >Medium ($11.99)</option>
         <option value="large" > Large ($13.99)</option>
       </select>
                 </div>
+            </div>
 
-            <div id="nys" style="display:none" class="col-sm-9">
+            <div id="cps3"  style="display:none" class="form-group">
+                <label class="control-label col-sm-3"> Choose Pizza size </label>
+                
+            <div id="nys" class="col-sm-9">
             <select class="form-control" name="Size" >
+        <option value="" >Choose a size</option>
         <option value="large" >Large ($16.99) </option>
         <option value="Elarge" > Extra Large ($19.99)</option>
       </select>
                 
             </div>
-            
-            <div id="gf" style="display:none" class="col-sm-9">
+            </div>
+          
+            <div id="cps4"  style="display:none" class="form-group">
+                <label class="control-label col-sm-3"> Choose Pizza size </label>
+                
+            <div id="gf" class="col-sm-9">
             <select class="form-control" name="Size" >
+        <option value="" >Choose a size</option>
         <option value="large" >Small ($10.99) </option>
         
       </select>
-                
+                </div> 
             </div>
-        <div class="form-group">
+                 </div>
+        <div id="cheese" class="form-group">
        <label class="control-label col-sm-3"> Your cheese options </label>
             <div class="col-sm-9">
             <select class="form-control" name="Size" >
@@ -177,36 +195,50 @@
                 </div>
             </div>
             
+            <div class="total">
+                <h4> Here is total cost</h4>
+                <p id="totalCost"></p>
+            </div> 
             <div class="form-group">
        <label class="control-label col-sm-4"> Topping options each for $.99 </label>
             
         <div class="form-group"> 
     <div class="col-sm-offset-3 col-sm-10">
       <div class="checkbox">
-        <input type="checkbox"> Pepperoni<br> 
-          <input type="checkbox">Sausage <br>
-            <input type="checkbox">Ham <br>
-            <input type="checkbox">Bacon <br>
-            <input type="checkbox">Balami <br>
-            <input type="checkbox">Peppers <br>
-            <input type="checkbox">Olives <br>
-            <input type="checkbox">Jalapenos <br>
-            <input type="checkbox">Mushrooms <br>
-            <input type="checkbox">Pineapple <br>
-            <input type="checkbox">Onion 
+        <input type="checkbox" name="top"> Pepperoni<br> 
+          <input type="checkbox" name="top">Sausage <br>                 
+            <input type="checkbox" name="top">Ham <br>
+            <input type="checkbox" name="top">Bacon <br>
+            <input type="checkbox" name="top">Balami <br>
+            <input type="checkbox" name="top">Peppers <br>
+            <input type="checkbox" name="top">Olives <br>
+            <input type="checkbox" name="top">Jalapenos <br>    
+            <input type="checkbox" name="top">Mushrooms <br>
+            <input type="checkbox" name="top">Pineapple <br>
+            <input type="checkbox" name="top">Onion 
           
       </div>
     </div>
   </div>
             </div>
         
+            <div class="form-group"> 
+    <div  id="done" class="col-sm-offset-2 col-sm-10">
+      <button type="submit1" class="btn">Finished Building Pizza</button>
+    </div>
+  </div>
+            
         <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
       <button id="finished" type="submit" class="btn btn-default">Submit Order</button>
     </div>
   </div>
 
-        
+      <!--  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="finished1" type="submit" class="btn btn-default" onclick="toppingTotal();">Submit Order</button>
+    </div>
+  </div>-->
         </form>  
 			
 		
