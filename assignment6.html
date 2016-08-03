@@ -24,14 +24,15 @@
         
       </div>
           
-        <p> <i>Note: Fields highlighted in red are required.</i></p>
+        <h2>Delivery Information</h2><br>
+        
         <form  class="form-horizontal" role="form" method="get">
         
         <div class="form-group">
        <label class="control-label col-sm-3" for="name"> First and Last Name: </label>
             <div class="col-sm-9">
             
-        <input id="username" type="text" name="username" class="form-control" autofocus title="Enter first and last name" >
+        <input type="text" class="form-control" id="username" name="username"  placeholder="Enter first and last name" >
             </div>
             </div>
                 <div class="form-group">
@@ -97,12 +98,12 @@
         <form  class="form-horizontal" role="form" method="get">
         
             <div class="form-group">
-       <label id="mail" class="control-label col-sm-3"> Email:</label>
+       <label class="control-label col-sm-3"> Email:</label>
                 <div class="col-sm-9">
-                <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Hint: Please use the format youremail@example.com">
+                <input id="mail" type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Hint: Please use the format youremail@example.com">
                 </div>
             </div>
-            
+        <h2>Build your Pizza</h2><br>    
             
         <div class="form-group">
        <label class="control-label"> Choose the type of dough you need </label>
@@ -224,24 +225,122 @@
         
             <div class="form-group"> 
     <div  id="done" class="col-sm-offset-2 col-sm-10">
-      <button type="submit1" class="btn">Finished Building Pizza</button>
+      <button id="finished1" type="submit1" class="btn">Finished Building Pizza</button>
     </div>
   </div>
+          <div id="paymentInfo" style="display: none">
+			
+	<h2>Billing Section</h2><br>
+              
+				<div class="form-group  ">
+					<div class="col-sm-offset-4 col-sm-8" id="delivery">
+					<input type="checkbox" name="same" id="same" onclick="reWrite(this.form[2])">
+					Same as delivery information
+					</div>
+				</div>
+              
+               <div class="form-group">
+       <label class="control-label col-sm-3" for="name"> First and Last Name: </label>
+            <div class="col-sm-9">
             
-        <div class="form-group"> 
+        <input id="username" type="text" name="usernameB" class="form-control" title="Enter first and last name" >
+            </div>
+            </div>
+              
+               <div class="form-group">
+       <label class="control-label col-sm-3" for="name"> Address: </label>
+            <div class="col-sm-9">
+            
+        <input id="address" type="text" name="addressB" class="form-control" >
+            </div>
+            </div>
+               <div class="form-group">
+       <label class="control-label col-sm-3" for="name"> Phone Number: </label>
+            <div class="col-sm-9">
+            
+        <input id="phone" type="tel" name="phoneB" class="form-control" >
+            </div>
+            </div>
+               <div class="form-group">
+       <label class="control-label col-sm-3" for="name">City: </label>
+            <div class="col-sm-9">
+            
+        <input id="city" type="text" name="cityB" class="form-control" >
+            </div>
+            </div>
+             <div class="form-group">
+       <label class="control-label col-sm-3" for="name">State: </label>
+            <div class="col-sm-9">
+            
+        <input id="state" type="text" name="stateB" class="form-control">
+            </div>
+            </div> 
+              
+               <div class="form-group">
+       <label class="control-label col-sm-3" for="name"> Zip Code: </label>
+            <div class="col-sm-9">
+            
+        <input id="zip" type="text" name="zipB" class="form-control" >
+            </div>
+            </div>
+              
+              <div  class="form-group">
+			<label for="credit" class="control-label col-sm-4">Credit Card Number:</label>
+			<div class="col-sm-6">
+				<input type="text" name="credit" id="ccNumber" class="form-control" />
+			</div>
+		</div>
+			  
+		<div class="form-group">
+			<label for="cvc" class="control-label col-sm-4">CVC Code:</label>
+			<div class="col-sm-6">
+				<input type="text" name="cvc" class="form-control" id="cvc" placeholder = "123" />
+			</div>
+		</div>
+			  
+		<div class="form-group">
+		<label for="month" class="control-label col-sm-4">Expiration</label>
+		<div class="col-sm-3">
+			<select name="month" class="form-control" id="month">
+				<option value="1">01-Jan</option>
+				<option value="2">02-Feb</option>
+				<option value="3">03-Mar</option>
+				<option value="4">04-Apr</option>
+				<option value="5">05-May</option>
+				<option value="6">06-Jun</option>
+				<option value="7">07-Jul</option>
+				<option value="8">08-Aug</option>
+				<option value="9">09-Sep</option>
+				<option value="10">10-Oct</option>
+				<option value="11">11-Nov</option>
+				<option value="12">12-Dec</option>
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select name="year" class="form-control" id="year">
+				<option value="2017">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2020">2021</option>
+			</select>
+		</div>
+		</div>
+		
+              <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
       <button id="finished" type="submit" class="btn btn-default">Submit Order</button>
     </div>
   </div>
+              </div>
+        
 
-      <!--  <div class="form-group"> 
-    <div class="col-sm-offset-2 col-sm-10">
-      <button id="finished1" type="submit" class="btn btn-default" onclick="toppingTotal();">Submit Order</button>
-    </div>
-  </div>-->
+     
+            
         </form>  
 			
-		
+        	
 
       </div>
 

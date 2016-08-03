@@ -17,25 +17,65 @@
 
 // --------- part 1 c -------
  
-finished.addEventListener("click", function validate(){    
-    var re = /^[A-Za-z]+$/;
-    var zc = /^[0-9]{5}(?:-[0-9]{4})?$/;
-    var phn = /^\d{10}$/;
-    var email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+finished1.addEventListener("click", function validate(event){
+    event.preventDefault();
+    
+     var re = /^[A-Za-z]+$/,
+         zc = /^[0-9]{5}(?:-[0-9]{4})?$/,
+         phn = /^\d{10}$/,
+         email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+         valid = true;
+       
+    
+    
     if(re.test(document.getElementById("username").value))
-       {}
-    else
-       {alert('Invalid Name')};
+       {}  
+        else {
+           document.getElementById("username").style.border = "2px solid red";
+          valid = false;
+       };
     
     if(zc.test(document.getElementById("zip").value))
        {}
     else
-       {alert('Invalid Zip Code')};
-    
-    if(phn.test(document.getElementById("mail").value))
+       {
+ document.getElementById("zip").style.border = "2px solid red";
+          valid = false;
+       };
+    if(phn.test(document.getElementById("pn").value))
        {}
     else
-       {alert('Invalid Email Address')};
+       {
+ document.getElementById("pn").style.border = "2px solid red";
+          valid = false;
+       };
+    if(email.test(document.getElementById("mail").value))
+       {}
+    else
+       {
+ document.getElementById("mail").style.border = "2px solid red";
+          valid = false;
+       }
+    
+    if(valid == false){
+		 window.alert("Please enter the correct value for the boxes in red");
+	} else {
+        
+        var doneMake = window.confirm("Are you sure you are done building your pizza?");
+    if (doneMake === true) {
+        var alert = window.alert("Go to the billing section!");
+       
+        var pay = document.getElementById("paymentInfo");
+        pay.style.display = "block";
+                          } else {
+            
+        var pay = document.getElementById("paymentInfo");
+        pay.style.display = "none";
+        window.scrollTo(0,0);
+                          }
+        
+    }
+		
 })
 
 // --------- part 2 step 2 -------
@@ -119,22 +159,10 @@ document.getElementById("sizenprice").style.border = "";
 }
 })
 
-// --------- General Things to Consider 3 -------
 
-done.addEventListener("click", function () {
-    
-   var doneMake = confirm("Are you sure you are done building your pizza?");
-    if (doneMake) {
-        alert("Go to the billing section! :)");
-    } else {
-        return false;
-    }
-        
-    
-})
 
 // ---------------General things to consider 2 ------
-var grandTotal = 0.00; 
+/*var grandTotal = 0.00; 
 //function what () {
     grandTotal = 0.00;
 var toppingResult = 0.99 * toppingTotal;
@@ -155,7 +183,20 @@ for (i=0; i < topping.length; i++)
    
     }
 
-document.getElementById("totalCost").innerHTML = grandTotal.toFixed(2);
+document.getElementById("totalCost").innerHTML = grandTotal.toFixed(2);*/
+
+// Billing
+
+function reWrite(b) {
+  if(b.same.checked == true) {
+    b.usernameB.value = b.username.value;
+    b.addressB.value = b.address.value;
+    b.phoneB.value = b.phone.value;
+    b.cityB.value = b.city.value;
+    b.stateB.value = b.state.value;
+    b.zipB.value = b.zipc.value;
+  }
+}
 
 /* finished1.addEventListener("click", function () {
     alert("you choose " + toppingNumber);
