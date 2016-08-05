@@ -186,15 +186,41 @@ for (i=0; i < topping.length; i++)
 document.getElementById("totalCost").innerHTML = grandTotal.toFixed(2);*/
 
 // Billing
+/*var f = document.getElementById("form1");
+sameadd.addEventListener("click", reWrite(f), false);*/
+var copyAddress = document.getElementById("sameadd");
+copyAddress.addEventListener("change", reWrite, false);
 
-function reWrite(b) {
-  if(b.same.checked == true) {
-    b.usernameB.value = b.username.value;
-    b.addressB.value = b.address.value;
-    b.phoneB.value = b.phone.value;
-    b.cityB.value = b.city.value;
-    b.stateB.value = b.state.value;
-    b.zipB.value = b.zipc.value;
+var unT = document.getElementById("username"),
+    addT = document.getElementById("adrs"),
+    phT = document.getElementById("pn"),
+    ciT = document.getElementById("ct"),
+    staT = document.getElementById("stt"),
+    zpT = document.getElementById("zip");
+
+var unB = document.getElementById("usernames"),
+    addB = document.getElementById("address"),
+    phB = document.getElementById("phone"),
+    ciB = document.getElementById("city"),
+    stB = document.getElementById("state"),
+    zpB = document.getElementById("zipc");
+    
+function reWrite() {
+    
+  if(this.checked == true) {
+    unB.value = unT.value;
+    addB.value = addT.value;
+    phB.value = phT.value;
+    ciB.value = ciT.value;
+    stB.value = staT.value;
+    zpB.value = zpT.value;
+  } else{
+      unB.value = "";
+      addB.value = "";
+      phB.value = "";
+      ciB.value = "";
+      stB.value = "";
+      zpB.value = "";
   }
 }
 
