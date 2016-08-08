@@ -84,6 +84,10 @@ HT.addEventListener("click", function () {
       if (HT.checked == true )   
     {  
     cps1.style.display = "block";
+    cps2.style.display = "none";
+    cps3.style.display = "none";
+    cps4.style.display = "none";
+       
         
     } else {
     cps1.style.display = "none";
@@ -97,6 +101,9 @@ TC.addEventListener("click", function () {
       if (TC.checked == true )   
     {  
     cps2.style.display = "block";
+    cps1.style.display = "none";
+    cps3.style.display = "none";
+    cps4.style.display = "none";
         
     }   else {
     cps2.style.display = "none";
@@ -110,6 +117,9 @@ NY.addEventListener("click", function () {
       if (NY.checked == true )   
     {  
     cps3.style.display = "block";
+    cps1.style.display = "none";
+    cps2.style.display = "none";
+    cps4.style.display = "none";
         
     }   else {
     cps3.style.display = "none";
@@ -123,6 +133,9 @@ GF.addEventListener("click", function () {
       if (GF.checked == true )   
     {  
     cps4.style.display = "block";
+    cps1.style.display = "none";
+    cps2.style.display = "none";
+    cps3.style.display = "none";
         
     }   else {
     cps4.style.display = "none";
@@ -149,8 +162,8 @@ document.getElementById("dough").style.border = "";
 });
 
 cheese.addEventListener("click", function validatea() {
-var combo1 = document.getElementsByName("Size")
-if(combo1.value == null || combo1.value == "") {
+var combo1 = document.getElementsByName("Size");
+if(combo1.value == "") {
 alert("Please Choose Pizza size");
 document.getElementById("sizenprice").style.border = "2px solid red";
 return false;
@@ -181,13 +194,27 @@ for (i=0; i < topping.length; i++)
     }
     return toppingNumber;
    
-    }
+    }*/
+/*document.getElementById("top").addEventListener("click", function updateTotals() {
+    
+   
+var num = document.getElementById("top");
+var subTotal = 0;
+for (var i = 0; i < num.length; i++)
+{
+if (num[i].checked) {
+subTotal = subTotal + 1;
+    } 
+}
+    subTotal = subTotal * .99;
+document.getElementById("totalCost").innerHTML = subTotal;
 
-document.getElementById("totalCost").innerHTML = grandTotal.toFixed(2);*/
+}
+
+*/
 
 // Billing
-/*var f = document.getElementById("form1");
-sameadd.addEventListener("click", reWrite(f), false);*/
+
 var copyAddress = document.getElementById("sameadd");
 copyAddress.addEventListener("change", reWrite, false);
 
