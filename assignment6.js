@@ -175,13 +175,6 @@ document.getElementById("sizenprice").style.border = "";
 
 
 // ---------------General things to consider 2 ------
-/*var grandTotal = 0.00; 
-//function what () {
-    grandTotal = 0.00;
-var toppingResult = 0.99 * toppingTotal;
-grandTotal += toppingResult;
-    
-
 function toppingTotal () {
 var topping = document.getElementsByName("top");
 var toppingNumber = 0;
@@ -194,24 +187,48 @@ for (i=0; i < topping.length; i++)
     }
     return toppingNumber;
    
-    }*/
-/*document.getElementById("top").addEventListener("click", function updateTotals() {
-    
-   
-var num = document.getElementById("top");
-var subTotal = 0;
-for (var i = 0; i < num.length; i++)
-{
-if (num[i].checked) {
-subTotal = subTotal + 1;
-    } 
-}
-    subTotal = subTotal * .99;
-document.getElementById("totalCost").innerHTML = subTotal;
+    }
 
-}
+        var handT = document.getElementById("htv");    
+        handT.addEventListener("change", updateTotals);
+        var thinC = document.getElementById("tcv");    
+        thinC.addEventListener("change", updateTotals);
+        var newY = document.getElementById("nyv");    
+        newY.addEventListener("change", updateTotals);
+        var guletinF = document.getElementById("gfv");    
+        guletinF.addEventListener("change", updateTotals);
+        var cheeseOption = document.getElementById("cheeseopt");    
+        cheeseOption.addEventListener("change", updateTotals);
+        var sauceOption = document.getElementById("sauce");    
+        sauceOption.addEventListener("change", updateTotals);
+               
+        var grandTotal = 0.00;    
+        function updateTotals(){
+           grandTotal = 0.00;     
+           document.getElementById("totalCost").value = "Total Cost: $ "; 
+             
+           var tHand = handT.options[handT.selectedIndex].value;
+           grandTotal += Number(tHand);
+           var cThin = thinC.options[thinC.selectedIndex].value;
+           grandTotal += Number(cThin);
+           var yNew = newY.options[newY.selectedIndex].value;
+           grandTotal += Number(yNew);
+           var fGuletin = guletinF.options[guletinF.selectedIndex].value;
+           grandTotal += Number(fGuletin);
+             
+           var optionCheese = cheeseOption.options[cheeseOption.selectedIndex].value;
+           grandTotal += Number(optionCheese);
+               
+           var optionSauce = sauceOption.options[sauceOption.selectedIndex].value;
+           grandTotal += Number(optionSauce); 
+           
+           var toppingCost = .99 * toppingTotal(); 
+           grandTotal += toppingCost;
+               
+           document.getElementById("totalCost").value += grandTotal.toFixed(2);
+        }
 
-*/
+
 
 // Billing
 

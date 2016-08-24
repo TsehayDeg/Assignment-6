@@ -119,6 +119,15 @@
         <input id="GF" type="radio" name="infra" value="GF">Gluten Free<br>
             </div>
             </div>
+            
+           <!-- <div id="typeOfDough" class="form-group mainhide">
+                        <label for="sizeOptions" class="control-label col-sm-3">Sizes Options:</label>
+                        <div class="col-sm-8">
+                            <select name="sizeOptions" id="sizeOptions" class="form-control">
+                                
+                            </select>
+                        </div>
+                    </div>-->
              <div id="sizenprice">   
             
             <div id="cps1" style="display:none" class="form-group">
@@ -127,9 +136,9 @@
             <div id="ht" class="col-sm-9">
             <select id="htv" class="form-control" name="Size" >
         <option value="" >Choose a size</option>
-        <option id="top" value="small">Small ($9.99)</option>
-        <option id="top" value="medium" > Medium ($12.99) </option>
-        <option id="top" value="large" >Large ($14.99) </option>
+        <option id="top" value="9.99">Small ($9.99)</option>
+        <option id="top" value="12.99" > Medium ($12.99) </option>
+        <option id="top" value="14.99" >Large ($14.99) </option>
                 </select>
                 </div>
             </div>
@@ -139,8 +148,8 @@
             <div id="tc" class="col-sm-9">
             <select id="tcv" class="form-control" name="Size" >
         <option value="" >Choose a size</option>
-        <option id="top" value="medium" >Medium ($11.99)</option>
-        <option id="top" value="large" > Large ($13.99)</option>
+        <option id="top" value="11.99" >Medium ($11.99)</option>
+        <option id="top" value="13.99" > Large ($13.99)</option>
       </select>
                 </div>
             </div>
@@ -149,10 +158,10 @@
                 <label class="control-label col-sm-3"> Choose Pizza size </label>
                 
             <div id="nys" class="col-sm-9">
-            <select class="form-control" name="Size" >
+            <select id="nyv" class="form-control" name="Size" >
         <option value="" >Choose a size</option>
-        <option id="top" value="large" >Large ($16.99) </option>
-        <option id="top" value="elarge" > Extra Large ($19.99)</option>
+        <option id="top" value="16.99" >Large ($16.99) </option>
+        <option id="top" value="19.99" > Extra Large ($19.99)</option>
       </select>
                 
             </div>
@@ -162,9 +171,9 @@
                 <label class="control-label col-sm-3"> Choose Pizza size </label>
                 
             <div id="gf" class="col-sm-9">
-            <select class="form-control" name="Size" >
+            <select id="gfv"class="form-control" name="Size" >
         <option value="" >Choose a size</option>
-        <option id="top" value="small" >Small ($10.99) </option>
+        <option id="top" value="10.99" >Small ($10.99) </option>
         
       </select>
                 </div> 
@@ -173,12 +182,12 @@
         <div id="cheese" class="form-group">
        <label class="control-label col-sm-3"> Your cheese options </label>
             <div class="col-sm-9">
-            <select class="form-control" name="" >
+            <select class="form-control" id="cheeseopt" >
     
-        <option value="light" >Light: no charge</option>
-        <option value="normal" >Normal (default): no charge</option>
-        <option id="top" value="extra" >Extra: +$2.99</option>
-        <option id="top" value="double" >Double: +$3.99</option>
+        <option value="0.00" >Light: no charge</option>
+        <option value="0.00" >Normal (default): no charge</option>
+        <option id="top" value="2.99" >Extra: +$2.99</option>
+        <option id="top" value="3.99" >Double: +$3.99</option>
         
                 </select>
                 </div>
@@ -186,11 +195,11 @@
             <div class="form-group">
        <label class="control-label col-sm-3"> Your sauce options </label>
             <div class="col-sm-9">
-            <select class="form-control" name="" >
+            <select class="form-control" id="sauce" >
     
-        <option value="light" >Regular Tomato: no charge</option>
-        <option id="top" >Hearty Tomato: +$.99</option>
-        <option id="top" >BBQ Sauce: +$1.99</option>
+        <option value="0.00" >Regular Tomato: no charge</option>
+        <option id="top" value="0.99" >Hearty Tomato: +$.99</option>
+        <option id="top1" value="1.99" >BBQ Sauce: +$1.99</option>
         
                 </select>
                 </div>
@@ -198,7 +207,7 @@
             
             <div class="total">
                 <h4> Here is total cost</h4>
-                Subtotal : <span id="totalCost"></span>
+                Subtotal : <input id="totalCost" type="text" value="Total Cost: ">
                 
             </div> 
             <div class="form-group">
@@ -207,17 +216,17 @@
         <div class="form-group"> 
     <div class="col-sm-offset-3 col-sm-10">
       <div class="checkbox">
-        <input type="checkbox" id="top" value="0.99" onchange="updateTotals()"> Pepperoni<br> 
-          <input type="checkbox" id="top" value="0.99" onchange="updateTotals()">Sausage <br>                 
-            <input type="checkbox" id="top" value="0.99" onchange="updateTotals()">Ham <br>
-            <input type="checkbox" id="top" value="0.99" onchange="updateTotals()">Bacon <br>
-            <input type="checkbox" id="top" value="0.99" >Balami <br>
-            <input type="checkbox" id="top" value="0.99">Peppers <br>
-            <input type="checkbox" id="top" value="0.99">Olives <br>
-            <input type="checkbox" id="top" value="0.99">Jalapenos <br>    
-            <input type="checkbox" id="top" value="0.99">Mushrooms <br>
-            <input type="checkbox" id="top" value="0.99">Pineapple <br>
-            <input type="checkbox" id="top" value="0.99">Onion 
+        <input type="checkbox" name="top" value="0.99" onchange="updateTotals()"> Pepperoni<br> 
+          <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Sausage <br>                 
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Ham <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Bacon <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()" >Balami <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Peppers <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Olives <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Jalapenos <br>    
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Mushrooms <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Pineapple <br>
+            <input type="checkbox" name="top" value="0.99" onchange="updateTotals()">Onion 
           
       </div>
     </div>
